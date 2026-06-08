@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background-color: #b0e0e6;
+ 
+}
+
+
+body {
+  background-color: mintcream;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  color: #0b0b0b;
+  user-select: none;
+ 
+}
+
+.navigation a {
+  position: relative;
+  /*font-size: 1.1em;*/
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #faf8f8;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover:after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+
+/*.btn {
+  background-color: #72cbf1;
+  border-radius: 4px;
+  padding: 5px;
+}*/
+
+.imgs {
+  position: absolute;
+
+}
+
+.mySlides {
+  display: none;
+}
+
+
+.slideshow-container {
+  max-width: 5000px;
+  position: relative;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.container {
+  background: rgb(249, 243, 243);
+  padding: 100px;
+  border-radius: 8px;
+  
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.txt {
+  text-align: center;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  color: #2a2a2a;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 576px) {
+  .section-heading h2 {
+    font-size: 34px;
+    line-height: 48px;
+    text-transform: uppercase;
+    letter-spacing: auto;
+  }
+}
+
+.section-heading h2 em {
+  color: #ff565b;
+  font-style: normal;
+  padding-left: 100px;
+  position: relative;
+}
+
+.section-heading h2 em::before {
+  width: 80px;
+  height: 2px;
+  background-color: #ff565b;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22px;
+}
+
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+label{
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+input{
+  display: inline-block;
+  width: 150px;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+
+}
+
+.form-box h2 {
+  font-size: 2em;
+  color: hsl(202, 39%, 19%);
+  text-align: center;
+}
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 3px;
+}
+
+
+.remember-forget{
+  margin-left: px;
+}
+
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar */
+  border-radius: 5px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
+
+/* Ensures scrolling is enabled */
+html {
+  overflow-y: scroll;
+}
+.ctd{
+  text-align: center;
+}
+
+img{
+  border-radius: 5px;
+}
+
+
+.pline {
+  margin-left: 20px;
+  text-align: center;
+
+}
+
+.number {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 600px;
+}
+
+.about-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.about-content button:hover {
+  background-color: #0056b3;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}

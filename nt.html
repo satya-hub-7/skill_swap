@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Private Theatre</title>
+    <link rel="stylesheet" href="t.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">SKILLSWAP</h2>
+        <nav class="navigation">
+            <a href="home.html">HOME</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="register.html">REGISTER</a>
+            <a href="contact.html">CONTACTUS</a>
+        </nav>
+    </header>
+    <div>
+        <div class="search-container">
+            <form action="#" method="GET">
+                <input type="text" id="search-input" placeholder="🔍 Search...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+        
+        <div class="catalog ">
+            <div class="catalog-item">
+                <a href="pic1nt.html"><img src="./images/u8.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> prasanna</p>
+                <p>coruses : painting,singing</p>
+                <p>rating : ⭐⭐⭐⭐⭐(5)</p>
+            </div>
+            <div class="catalog-item">
+                <a href="pic2nt.html"><img src="./images/u5.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> ajay kumar</p>
+                <p><strong>Courses:</strong> singing,gaming</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐☆(4.5)</p>
+            </div>
+            <div class="catalog-item">
+                <a href="pic3nt.html"><img src="./images/u6.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> vishnu priya</p>
+                <p><strong>Courses:</strong> dancing,typing</p>
+                <p><strong>Rating:</strong>⭐⭐⭐⭐(4)</p>
+            </div>
+            <div class="catalog-item">
+                <a href="pic4nt.html"><img src="./images/u7.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> raju</p>
+                <p><strong>Courses:</strong> dancing,creator</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐☆(4.5)</p>
+            </div>
+            <div class="catalog-item">
+                <a href="pic5nt.html"><img src="./images/u11.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> pallavi</p>
+                <p><strong>Courses:</strong> tailor,creator</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐☆(4.5)</p>
+            </div>
+            <div class="catalog-item">
+                <a href="pic6nt.html"><img src="./images/u10.jpg" height="200px" width="200px"></a>
+                <p><strong>Name:</strong> Narendra Modi</p>
+                <p><strong>Courses:</strong> management,creator</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐(5)</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("search-input").addEventListener("input", function () {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll(".catalog-item");
+    
+            items.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? "block" : "none";
+            });
+        });
+    </script>
+    
+
+</body>
+
+</html>

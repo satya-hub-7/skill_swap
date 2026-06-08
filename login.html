@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body align="center">
+
+    <header>
+        <h2 class="logo">SKILLSWAP</h2>
+        <nav class="navigation">
+            <a href="home.html">HOME</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="register.html">REGISTER</a>
+            <a href="contact.html" class="btnlogin-popup">CONTACT US</a>
+        </nav>
+    </header>   
+
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2 style="color: #0f0f0f">LOGIN</h2>
+            <br><br>
+            <form id="login-form">
+                <div class="input-box">
+                    <label for="username" style="color: #0d0d0e">USERNAME</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="password" style="color: #080808">PASSWORD</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="remember-forget">
+                    <a href="#" style="color: rgb(63, 137, 142);">Forgot Password?</a>
+                </div>
+                <br>
+
+                <a href="home.html"><button type="submit" class="btn">LOGIN</button></a>
+
+                <div class="login-register">
+                    <p style="color: rgb(2, 27, 49);">
+                        Don't have an account? 
+                        <a href="register.html" class="register-link" style="color: rgb(23, 159, 169);">Register</a>
+                    </p>
+                </div>
+
+                <p id="password-validation" style="color: red; font-weight: bold;"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const passwordValidation = document.getElementById("password-validation");
+
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const usernameValue = usernameInput.value.trim();
+            const passwordValue = passwordInput.value.trim();
+
+            const correctUsername = "skfirdous";
+            const correctPassword = "demoncoders";
+
+            if (usernameValue === correctUsername && passwordValue === correctPassword) {
+                passwordValidation.style.color = "green";
+                passwordValidation.innerHTML = "✅ Login successful!";
+            } else if (usernameValue !== correctUsername) {
+                passwordValidation.innerHTML = "❌ Incorrect username.";
+            } else {
+                passwordValidation.innerHTML = "❌ Incorrect password.";
+            }
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

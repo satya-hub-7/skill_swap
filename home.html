@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skillswap</title>
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+    <header>
+       
+        <h2 class="logo">SKILLSWAP</h2>
+        <nav class="navigation">
+            <a href="home.html">HOME</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="register.html">REGISTER</a>
+            <a href="contact.html">CONTACTUS</a>
+        </nav>
+    </header>
+    <div class="scrollable-div">
+    <div calss="container">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="./images/t1.jpg" width="1525px" height="600px">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./images/t4.jpg" width="1525px" height="600px">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./images/t2.jpg" width="1525px" height="600px">
+            </div>
+
+        </div>
+
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+}
+        </script>
+        
+        <div class="section-heading">
+            <h2>Explore Some Of Our <br><em>skills/courses</em>.</h2>
+        </div>
+        <div class="ctd">
+            <a href="skills.html">
+        <img src="./images/t3.jpg" alt="" width="500" height="500"></a><br><br><br>
+
+        <p><i>SkillSwap is an innovative online platform designed to connect individuals who want to learn new skills <br>brwith those who can teach them. It operates on a barter-based system,<br> allowing users to exchange technical and non-technical skills without monetary transactions.<br> Whether it's coding, graphic design, photography, music, or cooking, SkillSwap creates a community-driven learning environment.</p></i>
+    </div>
+
+    <section class="about-us">
+        <div class="about-content">
+            <h1>About SkillSwap</h1>
+            <p>SkillSwap is a platform where individuals can exchange skills with one another. Whether you're looking to learn a new skill or share your expertise, SkillSwap connects you with like-minded individuals to facilitate skill exchange.</p>
+            <p>Our mission is to create a community where knowledge sharing is easy, accessible, and rewarding. Join us today and start swapping skills!</p>
+            <button id="learnMoreBtn">Learn More</button>
+        </div>
+        <div class="about-image">
+            <img src="./images/about.jpg" alt="SkillSwap Team">
+        </div>
+    </section>
+
+
+    <footer>
+        <section>
+            <p class="pline"><ion-icon name="mail"></ion-icon> demoncoders@gmail.com</p>
+            <p class="number"><ion-icon name="call-outline"></ion-icon>&nbsp;&nbsp;9538157578</p>
+            <p style="text-align:center">&copy; 2023 SkillSwap. All rights reserved.</p>
+        </section>
+
+    </footer>
+    <script>
+        document.getElementById('learnMoreBtn').addEventListener('click', function() {
+    alert('Thank you for your interest in SkillSwap! We are excited to have you join our community.');
+});
+    </script>
+
+    
+
+    <script>
+        async function fetchSkills() {
+    const response = await fetch("http://localhost:5000/api/skills"); // Call backend on port 5000
+    const skills = await response.json();
+    const container = document.getElementById("skills-container");
+    container.innerHTML = ""; // Clear existing content
+
+    skills.forEach(skill => {
+        const skillBox = document.createElement("div");
+        skillBox.classList.add("service-box");
+        skillBox.innerHTML = `
+            <h2>${skill.skill_name}</h2>
+            <p>${skill.description}</p>
+        `;
+        container.appendChild(skillBox);
+    });
+}
+
+fetchSkills(); // Call function on page load
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
